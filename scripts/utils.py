@@ -3,6 +3,7 @@ import requests
 import time
 
 from fuzzywuzzy import process
+from pandas import DataFrame
 
 
 def get_data(subset: str = "train"):
@@ -51,7 +52,7 @@ def fuzzfilter(sample: list, candidates: list, pad: int):
 
 
 def remove_similar_sentences(
-    df: pd.DataFrame,
+    df: DataFrame,
     comparison_sentences: list, 
     col: str = "Yoruba",
     pad: int = 5, 
