@@ -52,8 +52,8 @@ def fuzzfilter(sample: list, candidates: list, pad: int):
 
 def remove_similar_sentences(
     df: pd.DataFrame,
-    col: str = "Yoruba",
     comparison_sentences: list, 
+    col: str = "Yoruba",
     pad: int = 5, 
     similarity_threshold: int = 95,
     verbose: int = 1000
