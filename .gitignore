@@ -1,0 +1,7 @@
+# Project folders
+/data
+/env
+/joeynmt
+
+# Environment files
+**/**/__pycache__
