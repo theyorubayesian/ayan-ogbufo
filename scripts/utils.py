@@ -54,7 +54,7 @@ def fuzzfilter(sample: list, candidates: list, pad: int):
 def remove_similar_sentences(
     df: DataFrame,
     comparison_sentences: list, 
-    col: str = "Yoruba",
+    comparison_col: str = "Yoruba",
     pad: int = 5, 
     similarity_threshold: int = 95,
     verbose: int = 1000
@@ -74,7 +74,7 @@ def remove_similar_sentences(
     
     for idx, row in temp.iterrows():
         scores.append(
-            fuzzfilter(row["Yoruba"], candidates=comparison_sentences, pad=pad)
+            fuzzfilter(list(row[comparison_col]), candidates=comparison_sentences, pad=pad)
             )
 
         if verbose and (idx % verbose == 0):
