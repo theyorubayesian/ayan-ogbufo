@@ -1,4 +1,5 @@
-# Project folders
+# Project 
+/.idea
 /data
 /env
 /joeynmt
