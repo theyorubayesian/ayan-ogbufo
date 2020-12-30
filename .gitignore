@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+=======
+# Project 
+/.idea
+/data
+/env
+/joeynmt
+>>>>>>> 9b1e2d07ef7ac4afff5983b358db0f2f78cee601
 
 # C extensions
 *.so
