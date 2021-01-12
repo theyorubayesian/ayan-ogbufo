@@ -2,7 +2,7 @@
 /.idea
 /data
 /env
-/joeynmt
+/joeynmt/
 
 # Environment files
 **/**/__pycache__
