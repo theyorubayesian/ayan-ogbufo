@@ -128,7 +128,7 @@ def main(
             tgt_vocab_file="data/vocab.en",
             num_symbols=num_symbols
         )
-
+    
     apply_bpe_args = [
         [
             "data/train.yo", "data/train.bpe.yo",
@@ -147,17 +147,16 @@ def main(
             f"data/bpe.codes.{num_symbols}", "data/vocab.en"
         ]
     ]
-
+    
     for args in apply_bpe_args:
         logging.info(f"Applying BPE to {args[0]}")
         apply_learned_bpe(*args)
 
-    # Build joeynmt vocabulary
     logging.info("Building vocabulary. Output will be written to 'data/vocab.txt'")
     jnmt_cmd_helper = CMDHelper()
     output, error = jnmt_cmd_helper.run_cmd_command(
         [
-            "python", "-m", "joeynmt.scripts.build_vocab",
+            "python", "joeynmt/scripts/build_vocab.py",
             "data/train.bpe.yo", "data/train.bpe.en",
             "--output_path", "data/vocab.txt"
         ]
