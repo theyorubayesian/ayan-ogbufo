@@ -11,12 +11,13 @@ class CMDHelper:
                                    stdin=subprocess.PIPE,
                                    stdout=subprocess.PIPE,
                                    stderr=subprocess.PIPE)
-        output, _ = command.communicate()
+        output, error = command.communicate()
         decoded_output = output.strip().decode()
+        decoded_error = error.strip().decode()
 
         if return_error_code:
-            return decoded_output, command.returncode
-        return decoded_output
+            return decoded_output, decoded_error, command.returncode
+        return decoded_output, decoded_error
 
     @staticmethod
     def make_executable(path):
